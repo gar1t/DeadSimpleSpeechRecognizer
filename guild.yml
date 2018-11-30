@@ -8,6 +8,9 @@
       requires:
         - raw-data
         - prepared-data
+    predict:
+      main: predict
+      # TODO requires trained-model
   resources:
     raw-data:
       sources:
