@@ -1,0 +1,20 @@
+- model: speech
+  operations:
+    prepare-data:
+      main: prepare_data
+      requires: raw-data
+    train:
+      main: train
+      requires:
+        - raw-data
+        - prepared-data
+  resources:
+    raw-data:
+      sources:
+        # TODO
+        #- url: <link to Kaggle data>
+        - ./data
+    prepared-data:
+      sources:
+        - operation: prepare-data
+          select: .+\.npy
